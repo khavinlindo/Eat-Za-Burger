@@ -1,17 +1,25 @@
 
 <div class="container">
-    <div class="row">
+    <div class="jumbotron title">
+        <div class="container text-center">
+            <img src="/public/images/burger.jpg" alt="burger" height="200" width="200">
+            <h1 class="display-4">EAT LA BURGER</h1>
+        </div>
+    </div>
+    {{!-- <div class="row">
         <div class="col-xs-12 text-center" id="top-bar">
             <h1>EAT LA BURGER</h1>
+            <img src="/public/images/burger.jpg" alt="burger" height="100" width="100">
         </div>
-        <div class="col-xs-6 text-center" class="task">
+    </div> --}}
+        {{!-- <div class="col-xs-6 text-center" class="task"> --}}
             <div class="row">
                 {{#each data}}
                     {{#unless this.devoured}}
-                <div class="col-xs-9 text-center">
+                <div class="col-xs-3">
                     <pre>{{this.id}}. {{this.burger_name}}</pre>
                 </div>
-            <div class="col-xs-3 text-center">
+            <div class="col-xs-3">
                 <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
                     <input type="hidden" name="burger_id" type="text" value={{this.id}}>
                     <br>
@@ -20,9 +28,9 @@
             </div>
             {{/unless}}
             {{/each}}
-            </div>
-        </div>
-
+            {{!-- </div> --}}
+        {{!-- </div> --}}
+    {{!-- <div class="row"> --}}
         <div class="col-xs-6 text-center" class="task">
             {{#each data}}
                 {{#if this.devoured}}
